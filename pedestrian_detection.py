@@ -11,6 +11,11 @@ live output.
 Otherwise import model and the function get_pedestrian_box(model, frame) on 
 an opencv2 frame object to get the bounding box of the detected
 pedestrian.
+i.e.
+import pedestrian_detection
+model = pedestrian_detection.model
+...
+pedestrian_detection.get_pedestrian_box(model, image)
 
 """
 
@@ -45,8 +50,7 @@ def get_pedestrian_box(model, frame):
             if confidence > highest_conf:
                 highest_conf = confidence
                 xyxy = boxes
-                highest_conf = confidence
-            break
+            
 
     return xyxy, highest_conf
 
